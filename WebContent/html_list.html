@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+li.horizontal {
+	float: left;
+    padding: 15px;
+    color: white;
+    text-decoration: blink;
+}
+
+ul.horizontal {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+</style>
+</head>
+<body>
+    <h4>Unordered HTML List</h4>
+    <ul style="list-style-type: lower-greek;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <h4>Ordered HTML List</h4>
+    <ol style="list-style-type: lower-latin;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    <h4>A Nested List</h4>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <ul>
+            <li>Black Tea</li>
+            <li>Green Tea</li>
+        </ul>
+        <li>Milk</li>
+    </ul>
+
+    <h4>A Horizontal List</h4>
+    <ul class="horizontal">
+        <li class="horizontal">Home</li>
+        <li class="horizontal">News</li>
+        <li class="horizontal">Contact</li>
+        <li class="horizontal">About</li>
+    </ul>
+</body>
+</html>

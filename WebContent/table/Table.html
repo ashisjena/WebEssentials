@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Table HTML</title>
+<style type="text/css">
+table#Emp, th, td {
+	border: 1px solid black;
+	border-collapse: separate;
+}
+
+th, td {
+	padding: 10px;
+}
+
+th {
+	text-align: center;
+	text-decoration: blink;
+	background-color: black;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #eee;
+}
+
+tr:nth-child(odd) {
+	background-color: #fff;
+}
+</style>
+</head>
+<body>
+    <table id="Emp" style="width: 700px;">
+        <caption>
+            <b>Employee Table</b>
+        </caption>
+        <!-- <colgroup>
+            <col span="1" style="background-color: pink;"> For columns to apply style
+        </colgroup> -->
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone No</th>
+            </tr>
+            <tr>
+                <td>Ram</td>
+                <td>50</td>
+                <td>9955886622</td>
+            </tr>
+            <tr>
+                <td>Shyam</td>
+                <td>26</td>
+                <td>9977445524</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Hari</td>
+                <td rowspan="2">27</td>
+                <td>9955223311</td>
+            </tr>
+            <tr>
+                <td style="background-color: #eee;">9922114455</td>
+            </tr>
+            <tr>
+                <td style="background-color: #fff;">Govinda</td>
+                <td style="background-color: #fff;">44</td>
+                <td style="background-color: #fff;">9944557788</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
