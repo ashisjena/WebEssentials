@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Form Example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewreport" content="width=device-width initialScale=1" />
+    <script>
+        window.onload = function updateDefaultRangeValue() {
+            updateRangeValue((document.getElementsByName('engProficiency'))[0].value);
+        }
+
+        function updateRangeValue(val) {
+            document.getElementById('proficiency').innerHTML = val;
+        }
+
+        function todayDate() {
+            return new Date().toJSON().slice(0, 10);
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form1" action="demoActionPage" method="GET">
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            First Name<br/><input type="text" name="firstname" maxlength="10" autocomplete="on" autofocus />
+            <!--Only 20 Characters are allowed-->
+            <br/> Last Name<br/><input type="text" name="lastname" autocomplete="off" />
+
+            <br/><br/>Designation &emsp;
+            <input type="text" id="designation" value="Senior Analyst" disabled />
+            <br/><br/>Employment Type&emsp;
+            <input type="text" id="employmentType" value="Permanent" readonly />
+
+            <br/><br/>Gender<br/>
+            <input type="radio" name="gender" value="male" checked />Male<br/>
+            <input type="radio" name="gender" value="female" />Female<br/>
+            <input type="radio" name="gender" value="other" />Other<br/>
+
+            <br/>Department<br/>
+            <input type="checkbox" name="dept" value="Engineering" /> Engineering <br/>
+            <input type="checkbox" name="dept" value="Sales" /> Sales<br/>
+            <input type="checkbox" name="dept" value="HR" />HR<br/>
+
+            <br/>City<br/>
+            <select name="city">  
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi" selected>Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <br/><br/>State
+            <br/><input name="state" list="statesList" />
+            <datalist id="statesList">
+                <option value="Orissa"/>
+                <option value="Karnataka"/>
+                <option value="Tamilnadu"/>
+                <option value="UttarPradesh"/>
+                <option value="Others"/>
+            </datalist>
+
+            <br/><br/>Favorite Color
+            <input type="color" name="favColor" value="#ffff00" />
+
+            <br/><br/>Date of Birth
+            <input type="date" id="dob" min="1970-01-01" max="1995-01-01" /> &emsp;or&emsp;Age
+            <!--YYYY-mm-dd-->
+
+            <input type="number" name="age" min="20" max="60" step="2" />
+
+            <br/><br/>Joining Month and Year
+            <input type="month" id="joiningMonthAndYear" />
+            <script>
+                document.getElementById('joiningMonthAndYear').setAttribute("min", todayDate().slice(0, 7));
+            </script>
+            <!--YYYY-mm-->
+
+            <br/><br/>English Proficiency
+            <input type="range" name="engProficiency" min="0" max="10" value="5" onchange="updateRangeValue(this.value);" /> &emsp;
+            <span id="proficiency"></span>
+
+            <br/><br/>Email
+            <input type="email" name="email" required/>
+
+            <br/><br/>Phone number
+            <input type="tel" name="telephone" required/>
+
+            <br/><br/>Country code
+            <input type="text" name="country_code" pattern="[A-Za-z]{3}" placeholder="Country Code" title="Three letter country code">
+
+            <br/><br/>About Yourself<br/>
+            <textarea name="about" rows="5" cols="50"></textarea>
+            <!--For Multiline input-->
+
+            <br/><br/> Google Search&emsp;
+            <input type="search" id="search" />
+
+            <br/><br/>URL
+            <input type="url" name="homepage" />
+
+            <br/><br/><input type="submit" value="Submit" /> &emsp;
+            <input type="reset" value="Clear" />
+
+            <br/><br/><button type="button" onclick="alert('abc')"> Click Me!</button>
+
+        </fieldset>
+    </form>
+    <p>This below text input is outside the form tag and "form" attribute is used here</p>
+    <input type="text" name="demo" form="form1" value="demo value" readonly />
+    <br/><br/> Upload multiple photos
+    <input type="file" name="img" multiple><br/><br/>
+    <input type="submit" formaction="AdminActionPage" value="Submit as Admin" form="form1" /><br/>
+    <p>Submit the details as encoded, and will work only with POST</p>
+    <input type="submit" formaction="EncodeAndSubmit" formmethod="POST" formtarget="_blank" value="Submit Encoded" form="form1" formenctype="multipart/form-data" />
+</body>

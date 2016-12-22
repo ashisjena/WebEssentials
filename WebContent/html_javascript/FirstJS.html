@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Java Script</title>
+</head>
+<body>
+<script type="text/javascript">
+	function func1(){
+		document.getElementById("demo").style.fontSize = "25px";
+		document.getElementById("demo").style.color = "red";
+		document.getElementById("demo").innerHTML = "Please click once";
+	}
+</script>
+    <button type="button" onclick="document.getElementById('demo').innerHTML= Date()" ondblclick="func1()">Click the button to display Current DateTime</button>
+    
+    <noscript>Sorry, your browser doesn't support JavaScript!</noscript>
+    
+    <p id="demo" />
+</body>
+</html>
