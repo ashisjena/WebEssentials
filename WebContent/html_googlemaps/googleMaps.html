@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewreport" content="width=device-width initialScale=1" />
+    <title>Google Maps in HTML</title>
+
+    <script>
+        function myMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(12.9, 77.7),
+                zoom: 40,
+                mapTypeId: google.maps.MapTypeId.ROADMAP //HYBRID, ROADMAP, TERRAIN, SATELLITE
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="map" style="width: 400px; height: 400px"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+</body>
+
+</html>
