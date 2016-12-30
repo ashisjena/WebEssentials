@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #grad1 {
+            text-align: center;
+            height: 300px;
+            width: 300px;
+            background: red;
+            /*For browsers that doesn't support gradients*/
+            background: -webkit-linear-gradient(red, yellow);
+            /*For older version Safari*/
+            background: -o-linear-gradient(red, yellow);
+            /*For older version Opera*/
+            background: -moz-linear-gradient(red, yellow);
+            /*For older version Mozilla*/
+            /*background: linear-gradient(red, yellow);*/
+            /*background: linear-gradient(to right, red, yellow);*/
+            /*background: linear-gradient(to bottom right, red, yellow);*/
+            background: linear-gradient(135deg, red, yellow);
+            /*The angle is between a vertical line and gradient line.*/
+        }
+        
+        #grad2 {
+            text-align: center;
+            height: 300px;
+            width: 300px;
+            background: linear-gradient(red, yellow, blue);
+        }
+        
+        #grad3 {
+            text-align: center;
+            margin: auto;
+            color: #888888;
+            font-size: 40px;
+            font-weight: bold;
+            height: 55px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Liner Gradient - Top to Bottom</h3>
+    <p>Default gradient is top to bottom</p>
+    <div id="grad1">Grad1</div>
+    <br/>
+    <div id="grad2">Grad2</div>
+    <br/>
+    <dir id="grad3">Gradient Background</div>
+</body>
+
+</html>

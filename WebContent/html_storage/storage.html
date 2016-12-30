@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="result"></div><br/>
+    <div id="sessionCounter"></div>
+    <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+    <script>
+        //Check browser support
+        if (typeof(Storage) != "undefined") {
+            localStorage.setItem("firstName", "Ashis");
+            //Retrieve
+            document.getElementById("result").innerHTML = localStorage.getItem("firstName");
+            //Remove
+            localStorage.removeItem("firstName");
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser doesn't support web Storage.";
+        }
+
+        function clickCounter() {
+            if (typeof(Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("sessionCounter").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+            } else {
+                document.getElementById("sessionCounter").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+</body>
+
+</html>

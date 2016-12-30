@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Geolocation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewreport" content="width=device-width initialScale=1" />
+
+    <script>
+        var geoL = null;
+        var mapHolder = null;
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                geoL.innerHTML = "Geolocation is not supported by this browser";
+            }
+        }
+
+        function showPosition(position) {
+            geoL.innerHTML = "Latitude : " + position.coords.latitude + ", Longitude : " + position.coords.longitude;
+            var latLong = position.coords.latitude + "," + position.coords.longitude;
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latLong + "&zoom=14&size=400x300&sensor=false";
+
+            mapHolder.innerHTML = "<img src='" + img_url + "'>";
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    geoL.innerHTML = "User denied the request for Geolocation";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    geoL.innerHTML = "Location information is unavailable";
+                    break;
+                case error.TIMEOUT:
+                    geoL.innerHTML = "The request to get user location is timed out";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    geoL.innerHTML = "An unknown error occured";
+                    break;
+                default:
+                    geoL.innerHTML = error.code;
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p id="geoLoc">Click the button to get your co-ordinates</p>
+    <button onclick="getLocation()">Try It</button>
+    <div id="mapHolder"></div>
+    <script>
+        geoL = document.getElementById("geoLoc");
+        mapHolder = document.getElementById("mapHolder");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #grad1 {
+            height: 200px;
+            /*background: linear-gradient(rgba(red, green, blue, alpha));*/
+            background: linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0.1));
+        }
+        
+        #grad2 {
+            height: 200px;
+            background: repeating-linear-gradient(45deg, red, yellow 10%, green 20%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grad1">Grad1</div>
+    <p>To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba() function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full transparency, 1 indicates full color (no
+        transparency).
+    </p>
+    <br/>
+    <div id="grad2">Grad2</div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        #boxshadow {
+            width: 600px;
+            height: 400px;
+            position: relative;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+            padding: 10px;
+            background: white;
+        }
+        /*Make the image fit to the box*/
+        
+        #boxshadow img {
+            border: 1px solid #8a4419;
+            border-style: inset;
+        }
+        
+        #boxshadow::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            /*hide shadow behind image*/
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+            width: 70%;
+            left: 15%;
+            /*starting point : one half of the remaining 30% */
+            height: 100px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<div id="boxshadow">
+    <img src="rock600x400.jpg" alt="Norway" width="600" height="400" />
+</div>
+
+<body>
+
+</body>
+
+</html>
