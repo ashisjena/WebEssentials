@@ -7,20 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         p.p1 {
-            border-left: 6px solid red;
-            background-color: lightgrey;
+            border-left: 4px solid red;
+            background-color: #ffe6f7;
         }
         
         p.p2 {
-            border: 2px solid red;
+            border: 5px solid red;
+            border-style: inset;
             border-radius: 6px;
+            background: lightgray;
+            margin: 50px 50px 0 50px;
+            /*top right bottom left*/
+        }
+        
+        p.p3 {
+            border: 1px solid black;
+            outline-style: double;
+            outline-width: 3px;
+            outline-color: green
+            /*Outline do not take up space. It always is placed on top of the box of element. Apart from this it is similar to border element*/
         }
     </style>
 </head>
 
 <body>
-    <p class="p1">Pragraph p1</p>
-    <p class="p2">Pragraph p2</p>
+    <p class="p1">Paragraph p1</p>
+    <p class="p2">Paragraph p2</p>
+    <p class="p3">Paragraph p3</p>
 </body>
 </bo2y>
 
