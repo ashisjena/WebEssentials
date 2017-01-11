@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        ol.li1 {
+            background: #ff9999;
+            padding: 20px;
+        }
+        
+        ul.li1 {
+            background: #3399ff;
+            padding: 20px;
+        }
+        
+        ol.li1 li {
+            background: #ffe5e5;
+            padding: 5px;
+            margin-left: 35px;
+        }
+        
+        ul.li1 li {
+            background: #cce5ff;
+            margin: 5px;
+        }
+        
+        ul.li2 {
+            list-style-position: inside;
+        }
+        
+        ul.li3 {
+            list-style-position: outside;
+        }
+        
+        ul.li4 {
+            list-style: circle inside url("ListIcon.png");
+        }
+        /*Shorthand property:
+        list-style-type (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
+        list-style-position (specifies whether the list-item markers should appear inside or outside the content flow)
+        list-style-image (specifies an image as the list item marker)*/
+    </style>
+</head>
+
+<body>
+    <h1>Styling Lists With Colors:</h1>
+
+    <ol class="li1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <ul class="li1">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <p>The following list has list-style-position: inside:</p>
+    <ul class="li2">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <p>The following list has list-style-position: outside:</p>
+    <ul class="li3">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <ul class="li4">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+</body>
+
+</html>
