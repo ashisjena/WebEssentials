@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+    <div id="div1"></div>
+    <button onclick="myVar = setTimeout(confirmMsgBox, 3000)">Click it!</button>
+    <p>Click "Stop" to prevent the first function to execute.</p>
+    <p>(You must click "Stop" before the 3 seconds are up.)</p>
+    <button onclick="clearTimeout(myVar)">Stop it</button>
+
+    <script>
+		function createPara(textValue) {
+			var para = document.createElement("p");
+			var node = document.createTextNode(textValue);
+			para.appendChild(node);
+			
+			var divElement = document.getElementById("div1");
+			divElement.appendChild(para);
+			return para;
+		}
+		
+		function confirmMsgBox(){
+			var text;
+			if(confirm("I'll make you and offer that you can't refuse?")){
+				text = "That was a wise decision";
+			} else {
+				text = "Take this bullet on your head";
+			}
+			createPara(text);
+		}
+		
+		/* function sleep(ms) {
+		    var unixtime_ms = new Date().getTime();
+		    while(new Date().getTime() < unixtime_ms + ms) {}
+		} */
+		
+		var para = createPara();
+		function myTimer(){
+			var d = new Date().toLocaleTimeString();
+			para.innerHTML = "The time is : " + d;
+		}
+		setInterval(myTimer, 1000);
+		
+		createPara("Page Location is : " + window.location.href);
+		createPara("Page Hostname is : " + window.location.hostname);
+		createPara("Page Path is : " + window.location.pathname);
+		createPara("Page protocol is : " + window.location.protocol);
+		
+		createPara("Is Cookies Enabled : " + navigator.cookieEnabled);
+		createPara("navigator.appCodeName is : " + navigator.appCodeName);
+		createPara("navigator.appName is : " + navigator.appName);
+		createPara("navigator.appVersion is : " + navigator.appVersion);
+		createPara("navigator.userAgent is : " + navigator.userAgent);
+		createPara("navigator.platform is : " + navigator.platform);
+		createPara("navigator.language is : " + navigator.language);
+		createPara("navigator.onLine is : " + navigator.onLine);
+		createPara("navigator.javaEnabled() is : " + navigator.javaEnabled());
+		
+		/* window.location.assign("Simple.html"); // This method loads a new document of the given name
+		window.history.back();
+		window.history.forward(); */
+		
+		document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+		
+		
+	</script>
+
+</body>
+</html>

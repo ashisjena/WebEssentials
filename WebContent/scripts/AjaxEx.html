@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="demo">
+        <h2>Ajax Example</h2>
+        <button id="b1" type="button" onclick="loadDoc('ajax_info.txt', myFunction);loadDoc('sample.json', myFunction1);loadDoc('sample.json', myFunction2)">Change Content</button>
+    </div>
+
+    <script>
+		function addPara(text) {
+			var div = document.getElementById("demo");
+			var para = document.createElement("p");
+			var node = document.createTextNode(text);
+			para.appendChild(node);
+			div.appendChild(para);
+		}
+		
+		function deleteElement(id){
+			var parent = document.getElementById("demo");
+			var child = document.getElementById(id);
+			if(child != null)
+				parent.removeChild(child);
+		}
+
+		function loadDoc(url, cFunction) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
+				}
+			};
+			
+			xhttp.open("GET", url, true);
+			xhttp.send();
+		}
+		
+		function myFunction(xhttp) {
+			addPara(xhttp.responseText);
+			deleteElement("b1");
+		}
+		
+		function myFunction1(xhttp) {
+			var obj = JSON.parse(xhttp.responseText);
+			addPara("JSON Parse : " + obj.menu.popup.menuitem[1].onclick);
+		}
+		
+		function myFunction2(xhttp) {
+			addPara("All Response Headers : " + xhttp.getAllResponseHeaders());
+			addPara("Response Header \"Last-Modified\" : " + xhttp.getResponseHeader("Last-Modified"));
+		}
+	</script>
+</body>
+</html>
