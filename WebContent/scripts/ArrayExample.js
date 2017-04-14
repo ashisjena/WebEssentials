@@ -23,6 +23,12 @@ console.log(fruits);
 for(var i=0; i < fruits.length; i++)
 	console.log(fruits[i]);
 
+/*
+ * Never use array in Foreach loop
+ * The order of iteration is not guaranteed, the array indexes may not be visited in numeric order.
+ * Inherited properties are also enumerated. ex. Array.prototype.foo = "fooooo!"; Here the value of foo also will appear in case of foreach loop
+ */
+
 console.log(delete fruits[0]); // returns true, and changes the first element to "undefined". Recommended to use pop() or shift();
 console.log(fruits);
 
@@ -50,3 +56,9 @@ console.log(joinedArray.slice(3, 7)); // Returns a new subArray from the startin
 console.log(fruits.sort());
 console.log(fruits.reverse()); // Reverse the order of the elements.
 
+
+if (typeof Array.isArray !== 'function') {
+	Array.isArray = function(value) {
+		return Object.prototype.toString.apply(value) === '[object Array]';
+	};
+}

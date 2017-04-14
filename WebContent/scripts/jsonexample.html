@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="clickButton()">Click it!</button>
+<script>
+	function clickButton() { // Adding dynamically is an async call
+		var s = document.createElement("script");
+		s.src = 'http://www.omdbapi.com/?t=kong&y=2017&plot=full&callback=myFunc';
+		// s.src = "simple_jsonp.php";
+		document.body.appendChild(s);
+		console.log("Asynchronous");
+	}
+
+	function myFunc(movieObj){
+		console.log(movieObj);
+	}
+	
+	function myFunction(jsonString){
+		console.log(JSON.parse(jsonString));
+	}
+</script>
+
+<script src="http://www.omdbapi.com/?t=kong&y=2017&plot=full&callback=myFunc">
+//This is an synchronous call
+</script>
+<script>
+	console.log("Synchronous");
+</script> 
+</body>
+</html>

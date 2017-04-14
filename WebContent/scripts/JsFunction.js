@@ -1,3 +1,8 @@
+// Functions are different types
+// 1. First Class functions
+// 2. Higher Order Functions
+// 3. Lexical Closure
+
 function findMax() {
 	var max = -Infinity;
 	var i;
